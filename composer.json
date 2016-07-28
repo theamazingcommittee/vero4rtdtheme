@@ -1,0 +1,19 @@
+{
+    "name": "theamazingcommittee/vero4rtdtheme",
+    "description": "This is a WordPress theme based on the one I used for vero4rtd.com.",
+    "type": "wordpress-theme",
+    "homepage": "http://veroniquebellamy.fr/en/resources/wordpress-themes/vero4rtd",
+    "keywords": ["wordpress", "theme", "campaign"],
+    "time": "",
+    "require": {
+	    "composer/installers": "v1.0.6",
+	    "wpackagist-plugin/aesop-story-engine": "1.7.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Véronique Bellamy",
+            "email": "v@vero.moe"
+        }
+    ]
+}
