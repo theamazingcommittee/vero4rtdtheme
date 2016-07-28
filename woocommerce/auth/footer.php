@@ -15,11 +15,9 @@
  * @package WooCommerce/Templates/Auth
  * @version 2.4.0
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly
 }
-
 ?>
 		</div>
 	</body>
