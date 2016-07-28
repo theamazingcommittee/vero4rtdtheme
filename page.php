@@ -3,13 +3,10 @@
  * The template for displaying all pages.
  *
  * @package WordPress
- * @subpackage Starkers
- * @since Starkers HTML5 3.0
+ * @subpackage Vero4RTD
  */
-
-get_header(); ?>
-
-	<?php get_template_part( 'loop', 'page' ); ?>
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+get_header();
+get_template_part('loop', 'page');
+get_sidebar();
+get_footer();
+?>

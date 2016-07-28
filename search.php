@@ -3,22 +3,17 @@
  * The template for displaying Search Results pages.
  *
  * @package WordPress
- * @subpackage Starkers
- * @since Starkers HTML5 3.0
+ * @subpackage Vero4RTD
  */
-
-get_header(); ?>
-
-<?php if ( have_posts() ) : ?>
-		<h1><?php printf( __( 'Search Results for: %s', 'starkers' ), '' . get_search_query() . '' ); ?></h1>
-			<?php
-				get_template_part( 'loop', 'search' );
-			?>
-<?php else : ?>
-		<h2><?php _e( 'Nothing Found', 'starkers' ); ?></h2>
-			<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'starkers' ); ?></p>
-			<?php get_search_form(); ?>
-<?php endif; ?>
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+get_header();
+if (have_posts()) : ?>
+	<h1><?php printf( __( 'Search Results for: %s', 'vero4rtd' ), '' . get_search_query() . '' ); ?></h1>
+	<?php get_template_part('loop', 'search');
+else : ?>
+	<h2><?php _e('Nothing Found', 'vero4rtd'); ?></h2>
+	<p><?php _e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'vero4rtd'); ?></p>
+	<?php get_search_form();
+endif;
+get_sidebar();
+get_footer();
+?>

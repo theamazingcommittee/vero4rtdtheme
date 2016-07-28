@@ -3,14 +3,13 @@
  * The template for displaying Tag Archive pages.
  *
  * @package WordPress
- * @subpackage Starkers
- * @since Starkers HTML5 3.0
+ * @subpackage Vero4RTD
  */
 
 get_header(); ?>
 
 		<h1><?php
-			printf( __( 'Tag Archives: %s', 'starkers' ), '' . single_tag_title( '', false ) . '' );
+			printf( __( 'Tag Archives: %s', 'vero4rtd' ), '' . single_tag_title( '', false ) . '' );
 		?></h1>
 
 <?php

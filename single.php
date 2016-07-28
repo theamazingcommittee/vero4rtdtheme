@@ -3,13 +3,11 @@
  * The Template for displaying all single posts.
  *
  * @package WordPress
- * @subpackage Starkers
- * @since Starkers HTML5 3.0
+ * @subpackage Vero4RTD
  */
 
-get_header(); ?>
-
-	<?php get_template_part( 'loop', 'single' ); ?>
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+get_header();
+get_template_part('loop', 'single');
+get_sidebar();
+get_footer();
+?>
