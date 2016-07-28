@@ -15,9 +15,8 @@
  * @package 	WooCommerce/Templates
  * @version     1.6.4
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
-
-get_sidebar( 'shop' ); ?>
+get_sidebar('shop');
+?>

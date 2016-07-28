@@ -17,11 +17,8 @@
  * @package 	WooCommerce/Templates
  * @version     1.6.4
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
-
+do_action('woocommerce_share'); // Sharing plugins can hook into here
 ?>
-
-<?php do_action( 'woocommerce_share' ); // Sharing plugins can hook into here ?>

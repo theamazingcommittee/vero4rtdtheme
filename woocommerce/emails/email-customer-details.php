@@ -17,15 +17,13 @@
  * @package 	WooCommerce/Templates/Emails
  * @version     2.5.0
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly
 }
-
 ?>
-<h2><?php _e( 'Customer details', 'woocommerce' ); ?></h2>
+<h2><?php _e('Customer details', 'woocommerce'); ?></h2>
 <ul>
-    <?php foreach ( $fields as $field ) : ?>
-        <li><strong><?php echo wp_kses_post( $field['label'] ); ?>:</strong> <span class="text"><?php echo wp_kses_post( $field['value'] ); ?></span></li>
+    <?php foreach ($fields as $field) : ?>
+        <li><strong><?php echo wp_kses_post($field['label']); ?>:</strong> <span class="text"><?php echo wp_kses_post($field['value']); ?></span></li>
     <?php endforeach; ?>
 </ul>

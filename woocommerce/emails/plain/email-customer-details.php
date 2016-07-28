@@ -17,13 +17,11 @@
  * @package     WooCommerce/Templates/Emails/Plain
  * @version     2.5.0
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly
 }
-
-echo strtoupper( __( 'Customer details', 'woocommerce' ) ) . "\n\n";
-
-foreach ( $fields as $field ) {
-	echo wp_kses_post( $field['label'] ) . ': ' . wp_kses_post( $field['value'] ) . "\n";
+echo strtoupper(__('Customer details', 'woocommerce')) . "\n\n";
+foreach ($fields as $field) {
+	echo wp_kses_post($field['label']) . ': ' . wp_kses_post($field['value']) . "\n";
 }
+?>

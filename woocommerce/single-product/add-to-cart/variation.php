@@ -10,8 +10,8 @@
  * @package WooCommerce/Templates
  * @version 2.5.0
  */
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly
 }
 ?>
 <script type="text/template" id="tmpl-variation-template">
@@ -28,5 +28,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 </script>
 <script type="text/template" id="tmpl-unavailable-variation-template">
-	<p><?php _e( 'Sorry, this product is unavailable. Please choose a different combination.', 'woocommerce' ); ?></p>
+	<p><?php _e('Sorry, this product is unavailable. Please choose a different combination.', 'woocommerce'); ?></p>
 </script>
