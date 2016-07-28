@@ -15,16 +15,14 @@
  * @package 	WooCommerce/Templates
  * @version     2.3.2
  */
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 
 global $product;
-
-if ( ! comments_open() ) {
+if (!comments_open()) {
 	return;
 }
-
 ?>
 <div id="reviews" class="woocommerce-Reviews">
 	<div id="comments">
