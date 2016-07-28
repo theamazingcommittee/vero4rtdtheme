@@ -3,12 +3,9 @@
  * The template for displaying attachments.
  *
  * @package WordPress
- * @subpackage Starkers
- * @since Starkers HTML5 3.0
+ * @subpackage Vero4RTD
  */
- 
-get_header(); ?>
- 
-    <?php get_template_part( 'loop', 'attachment' ); ?>
- 
-<?php get_footer(); ?>
+get_header();
+get_template_part('loop', 'attachment');
+get_footer();
+?>
