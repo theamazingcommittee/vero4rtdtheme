@@ -54,19 +54,17 @@ if(!empty($_GET['ajax']) ? $_GET['ajax'] : null) {
             kbe_search_form();
         }
 ?>
-    <!--content-->
-    <div id="kbe_content" <?php echo $kbe_content_class; ?>>
-    <?php
-        $kbe_search_term = $_GET['s'];
-    ?>
-	
-        <h1><?php _e('Search Results for: '.$kbe_search_term, 'kbe'); ?></h1>
-
-        <!--leftcol-->
-        <div class="kbe_leftcol" >
-            <!--<articles>-->
-            <div class="kbe_articles_search">
-                <ul>
+	<!--content-->
+	<div id="kbe_content" <?php echo $kbe_content_class; ?>>
+<?php
+		$kbe_search_term = $_GET['s'];
+?>
+		<h1><?php _e('Search Results for: '.$kbe_search_term, 'kbe'); ?></h1>
+		<!--leftcol-->
+		<div class="kbe_leftcol">
+			<!--<articles>-->
+			<div class="kbe_articles_search">
+				<ul>
             <?php
                 while(have_posts()) :
                     the_post();

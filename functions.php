@@ -351,4 +351,16 @@ function vero4rtd_kbe_breadcrumbs() {
 	}
 	echo "</ol>";
 }
+function vero4rtd_kbe_search_form() {
+	// Life search
+	?><div id="live-search">
+        <div class="kbe_search_field">
+            <form role="search" method="get" id="searchform" class="clearfix" action="<?php echo home_url( '/' ); ?>" autocomplete="off">
+                <input type="text" onfocus="if (this.value == '<?php _e( 'Search Articles...', 'wp-knowledgebase' ); ?>') {this.value = '';}" onblur="if (this.value == '')  {this.value = '<?php _e( 'Search Articles...', 'wp-knowledgebase' ); ?>';}" value="<?php _e( 'Search Articles...', 'wp-knowledgebase' ); ?>" name="s" id="s" />
+                <!--<ul id="kbe_search_dropdown"></ul>-->
+                <input type="hidden" name="post_type" value="kbe_knowledgebase" />
+            </form>
+        </div>
+    </div><?php
+}
 ?>
