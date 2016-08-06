@@ -1,72 +1,59 @@
 <?php
 // Classes For main content div
 if(KBE_SIDEBAR_INNER == 0) {
-    $kbe_content_class = 'class="kbe_content_full"';
+	$kbe_content_class = 'class="kbe_content_full"';
 } elseif(KBE_SIDEBAR_INNER == 1) {
-    $kbe_content_class = 'class="kbe_content_right"';
+	$kbe_content_class = 'class="kbe_content_right"';
 } elseif(KBE_SIDEBAR_INNER == 2) {
-    $kbe_content_class = 'class="kbe_content_left"';
+	$kbe_content_class = 'class="kbe_content_left"';
 }
 
 // Classes For sidebar div
 if(KBE_SIDEBAR_INNER == 0) {
-    $kbe_sidebar_class = 'kbe_aside_none';
+	$kbe_sidebar_class = 'kbe_aside_none';
 } elseif(KBE_SIDEBAR_INNER == 1) {
-    $kbe_sidebar_class = 'kbe_aside_left';
+	$kbe_sidebar_class = 'kbe_aside_left';
 } elseif(KBE_SIDEBAR_INNER == 2) {
-    $kbe_sidebar_class = 'kbe_aside_right';
+	$kbe_sidebar_class = 'kbe_aside_right';
 }
 
 if(!empty($_GET['ajax']) ? $_GET['ajax'] : null) {
-    if ( have_posts() ) {
+	if (have_posts()) {
 ?>
-        <ul id="search-result">
-    <?php
-        while (have_posts()) : the_post();
-    ?>
-            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-            
-    <?php
-        endwhile;
-    ?>
-        </ul>
-
+	<ul id="search-result">
 <?php
-    } else {
+		while (have_posts()) : the_post();
 ?>
-        <span class="kbe_no_result">Search result not found......</span>
+		<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 <?php
-    }
+		endwhile;
+?>
+	</ul>
+<?php
+	} else {
+?>
+		<span class="kbe_no_result">Search result not found......</span>
+<?php
+	}
 } else {
-    get_header('knowledgebase');
-    // load the style and script
-    wp_enqueue_style ( 'kbe_theme_style' );
-    if( KBE_SEARCH_SETTING == 1 ){
-        wp_enqueue_script( 'kbe_live_search' );
-    }
+	get_header('knowledgebase');
+	// load the style and script
+	wp_enqueue_style('kbe_theme_style');
+	if(KBE_SEARCH_SETTING == 1){
+		wp_enqueue_script('kbe_live_search');
+	}
 ?>
-    <div id="kbe_container">
-
-    <!--Breadcrum-->
+	<div id="kbe_container">
     <?php
+	    // Breadcrumbs
         if(KBE_BREADCRUMBS_SETTING == 1){
-    ?>
-        <div class="kbe_breadcrum">
-            <?php echo kbe_breadcrumbs(); ?>
-        </div>
-    <?php
+			vero4rtd_kbe_breadcrumbs();
         }
-    ?>
-    <!--/Breadcrum-->
-        
-    <!--search field-->
-    <?php
+        // search field
         if(KBE_SEARCH_SETTING == 1){
             kbe_search_form();
         }
-    ?>
-    <!--/search field-->
-        
+?>
     <!--content-->
     <div id="kbe_content" <?php echo $kbe_content_class; ?>>
     <?php

@@ -294,3 +294,61 @@ function vero4rtd_woowrapper_start() {
 function vero4rtd_woowrapper_end() {
 	// Add content to end the WooCommerce wrapper.
 }
+
+/**
+ * WP-Knowledgebase Breadcrumbs function
+ * A theme specific version of kbe_breadcrumbs();
+ */
+function vero4rtd_kbe_breadcrumbs() {
+	// TODO: Change code to work better with the theme.
+	$parts = array(
+		array(
+			'text' => __('Home', 'wp-knowledgebase'),
+			'href' => home_url(),
+		),
+		array(
+			'text' => ucwords(strtolower(KBE_PLUGIN_SLUG)),
+			'href' => home_url(KBE_PLUGIN_SLUG),
+		),
+	);
+	if (is_tax(array('kbe_taxonomy', 'knowledgebase_category', 'kbe_tags', 'knowledgebase_tags'))) {
+		$parts[] = array(
+			'text' => get_queried_object()->name,
+		);
+	} elseif (is_search()) {
+		$parts[] = array(
+			'text' => esc_html($_GET['s']),
+		);
+	} elseif (is_single()) {
+		$kbe_bc_term = get_the_terms(get_the_ID(), KBE_POST_TAXONOMY);
+		foreach ($kbe_bc_term as $kbe_tax_term) {
+			$parts[] = array(
+				'text' => $kbe_tax_term->name,
+				'href' => get_term_link($kbe_tax_term->slug, KBE_POST_TAXONOMY),
+			);
+		}
+		$title = strlen(get_the_title()) >= 50 ? substr(get_the_title(), 0, 50) . '&hellip;' : get_the_title();
+		$parts[] = array(
+		'text' => $title,
+		);
+	}
+	$parts = apply_filters('wp_knowledgebase_breadcrumb_parts', $parts);
+	echo '<ol class="breadcrumb">';
+	foreach ($parts as $k => $part) {
+		$part = wp_parse_args($part, array('text' => '', 'href' => ''));
+		echo "<li";
+		if ($k === end($keys)) {
+			echo ' class="active"';	
+		}
+		echo ">";
+		if ($k !== end($keys)) {
+			echo '<a href="' . esc_url($part['href']) . '">' . wp_kses_post($part['text']) . '</a>';
+		} else {
+			echo wp_kses_post($part['text']);
+		}
+		echo "</li>";
+		$keys = array_keys($parts);
+	}
+	echo "</ol>";
+}
+?>
